@@ -6,6 +6,18 @@ using UnityEngine.UIElements;
 
 public class FOW_Enemy : MonoBehaviour
 {
+    /// <summary>
+    /// Presudoco
+    /// 1. Set up the range circle by defining sight field by the angle and radius (set up layer for target and obstacles)
+    /// 2. Obtain all targets in the range by overlapShpere function 
+    /// 3. Using RAYCAST fillter out the target that is in the range but behind the obstacles 
+    /// 3.1 Mean while setup Unityeditor SC for direct GIZMO line in editor for debugging. 
+    /// 4. All function is work now for visualisation (including using customised mesh in unity)
+    /// 5. Shoot bunch of rays in the sight angle from player (Emittor), calculate each angle dir that is produced by all these rays
+    /// 6. Create a struct for storing many different variables
+    /// 7. use these data collect from each ray to generate customised mesh
+    /// 8. 
+    /// </summary>
     public float ViewRadius;
     [Range(0,360)]
     public float ViewAngle;
@@ -86,7 +98,7 @@ public class FOW_Enemy : MonoBehaviour
         }
 
 
-        //obtaining all data vertices number,vertices local vector3 from player, triangle combination number,
+        //obtaining all data vertices number,vertices local vector3 from player, triangle combination number.
         int verticesCount=hitPoints.Count+1;
         int triangleNum = verticesCount - 2;
         Vector3[] vertices=new Vector3[verticesCount];  
@@ -111,9 +123,6 @@ public class FOW_Enemy : MonoBehaviour
         _viewMesh.RecalculateNormals();
 
     }
-
-
-
 
     ViewCastInfo ViewCast(float globalAngle) //For recording the hitpoint on obstacles from each ray that is projectiled by emitter 
     {
