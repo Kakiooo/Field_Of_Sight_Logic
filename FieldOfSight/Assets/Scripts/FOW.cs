@@ -82,8 +82,11 @@ public class FOW_Enemy : MonoBehaviour
            // Debug.DrawLine(transform.position, transform.position + AngleDir(angle, true) * ViewRadius, Color.red);
            ViewCastInfo newViewCast=ViewCast(angle);
             hitPoints.Add(newViewCast.HitPoint);
+            //remember the vectors here are all local
         }
-        //remember the vectors here are all local
+
+
+        //obtaining all data vertices number,vertices local vector3 from player, triangle combination number,
         int verticesCount=hitPoints.Count+1;
         int triangleNum = verticesCount - 2;
         Vector3[] vertices=new Vector3[verticesCount];  
@@ -130,6 +133,9 @@ public class FOW_Enemy : MonoBehaviour
 
     public struct ViewCastInfo//all the variables inside cannot be called outside this struct or this constructor. 
     {
+        /// <summary>
+        ///Save all different data that other function can use it 
+        /// </summary>
         public bool Hit;
         public Vector3 HitPoint;
         public float Angle;
