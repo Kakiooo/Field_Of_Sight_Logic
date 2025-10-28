@@ -11,3 +11,4 @@ BASIC LOGIC
 IN ENGINE SET-UP
 1. Create two Layer TARGETs and OBSTACLES
 2. Create viewGameobject with Component MeshFilter and MeshRenderer for customised MESH (Display visual Field of sight)
+3. FOW contains all the functions FOW Editor is for DRAW GIZMO in the editor
