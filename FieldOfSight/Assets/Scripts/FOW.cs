@@ -16,8 +16,8 @@ public class FOW_Enemy : MonoBehaviour
     /// 5. Shoot bunch of rays in the sight angle from player (Emittor), calculate each angle dir that is produced by all these rays
     /// 6. Create a struct for storing many different variables
     /// 7. use these data collect from each ray to generate customised mesh
-    /// 8. 
     /// </summary>
+   
     public float ViewRadius;
     [Range(0,360)]
     public float ViewAngle;
